@@ -1,53 +1,30 @@
 const bonus_pack = [
     {
-        'exhibition': 'Total dedicação', 'url_background': '', 'explain': 'Total apoio e suporte pra todo momento que precisar. Sempre te colocando pra cima, única hora que vou te colocar pra baixo... deixa quieto'
+        'exhibition': 'Total dedicação',
+        'url_background': './media/dedication.png',
+        'explain': 'Total apoio e suporte pra todo momento que precisar. Sempre te colocando pra cima, única hora que vou te colocar pra baixo... deixa quieto'
     },
     {
-        'exhibition': 'Gracejos Ilimitados', 'url_background': './', 'explain': 'Nesse Pacote, o Repertório de piadas é infinito, até quando você não quiser, irá ter piadas.'        
+        'exhibition': 'Gracejos Ilimitados',
+        'url_background': './media/jokes.png',
+        'explain': 'Nesse Pacote, o Repertório de piadas é infinito, até quando você não quiser, irá ter piadas.'        
     },
     {
-        'exhibition': 'Lealdade Ilimitada', 'url_background': './', 'explain': 'Confiança absoluta.'        
+        'exhibition': 'Lealdade Ilimitada',
+        'url_background': './media/loyal.png',
+        'explain': 'Confiança absoluta.'        
     },
     {
-        'exhibition': 'Um amigo', 'url_background': './', 'explain': 'Além de tudo, você ganhará um amigo.'        
+        'exhibition': 'Um amigo',
+        'url_background': './media/friend.png',
+        'explain': 'Além de tudo, você ganhará um amigo.'        
     },
     {
-        'exhibition': 'Carinho e Atenção Ilimitados', 'url_background': './', 'explain': 'Auto Explicativo.'        
+        'exhibition': 'Carinho e Atenção Ilimitados',
+        'url_background': './media/cuddles.png',
+        'explain': 'Auto Explicativo.'        
     }
 ]
-
-
-$(document).on('click','.yes-button',function(){    
-    Swal.fire({
-        title: 'Parabéns',
-        text: 'Você adquiriu um produto sem devolução, será entregue na sua casa.',
-        imageUrl: './media/yes.webp',
-        imageWidth: 300,
-        imageHeight: 200,
-        imageAlt: 'Deu ruim na Imagem kkk'        
-    }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: 'OBG DEUS',
-            text: 'hahahahahahaha ~risadinha de vilão intensifies~',
-            imageUrl: './media/jesus.webp',
-            imageWidth: 300,
-            imageHeight: 200,
-            imageAlt: 'Falhou a segunda imagem'        
-            })
-        }}
-    );
-});
-
-$(document).on('click', '.no-button', function(){
-    MoveNB()
-});
-
-
-$(document).on('mouseenter', '.no-button', function(){
-    MoveNB()
-});
-
 
 function MoveNB(){
     if ($(window).width() <= 900) {                
@@ -94,12 +71,6 @@ function MoveNB(){
 
 }
 
-
-$(document).on('click', '.plus-info', function(){
-    loop_swal(0)
-});
-
-
 function loop_swal(count){
     if (count >= bonus_pack.length) {        
         return;
@@ -111,10 +82,9 @@ function loop_swal(count){
         showDenyButton: true,
         confirmButtonText: 'Continuar',
         denyButtonText: 'Parar',
-        imageUrl: './media/yes.webp',
+        imageUrl: bonus_pack[count].url_background,
         imageWidth: 300,
-        imageHeight: 200,
-        imageAlt: 'Deu ruim na Imagem kkk'   
+        imageHeight: 200        
     }).then((result) => {
         if (result.isConfirmed) {
             loop_swal(count + 1)
@@ -124,6 +94,40 @@ function loop_swal(count){
     })
 }
 
+function Accept(){
+    Swal.fire({
+        title: 'Parabéns',
+        text: 'Você adquiriu um produto sem devolução, será entregue na sua casa.',
+        imageUrl: './media/yes.webp',
+        imageWidth: 300,
+        imageHeight: 200,
+        imageAlt: 'Deu ruim na Imagem kkk'        
+    }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: 'OBG DEUS',
+            text: 'hahahahahahaha ~risadinha de vilão intensifies~',
+            imageUrl: './media/jesus.webp',
+            imageWidth: 300,
+            imageHeight: 200,
+            imageAlt: 'Falhou a segunda imagem'        
+            })
+        }}
+    );
+}
+
+$(document).on('click','.yes-button',function(){    
+    Accept()
+});
+
+$(document).on('click', '.no-button', function(){
+    MoveNB()
+});
+
+
+$(document).on('mouseenter', '.no-button', function(){
+    MoveNB()
+});
 
 $(document).on('click', '.payment-info',function(){
     Swal.fire({
@@ -131,11 +135,15 @@ $(document).on('click', '.payment-info',function(){
         imageUrl: './media/money.jpg',
         imageWidth: 300,
         imageHeight: 200,
-        text: 'Promoção enorme, principalmente se seu nome for ..., o pacote vitalício está saindo por apenas: 2 pizzas da domino\'s ou mais por mês, carinho'
+        text: 'Promoção imperdível, o pacote vitalício está saindo por apenas: 2 pizzas da domino\'s ou mais por mês e carinho'
     }).then((result) => {
         Swal.fire({
-            title: 'ACHOU INTERESSANTE ?',
-            text: 'CLIQUE NO SIM ALI NA IMAGEM, CASO NÃO QUERIA, VIADO NÃO É VERDE, VERDE É BAMBU, BOLA NA REDE E PAU NO SEU CÚ'
+            title: 'Achou interessante ?',
+            text: 'Clique no Sim na página principal para comprar o produto'
         })
     })
+});
+
+$(document).on('click', '.plus-info', function(){
+    loop_swal(0)
 });

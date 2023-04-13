@@ -14,7 +14,6 @@ body {
     justify-content: center;
     align-items: center;
     display:flex;
-
     flex-direction: column;
     row-gap: 30px;
     text-align: center;
@@ -28,8 +27,7 @@ body {
     background: rgba(255, 255, 255, 0.9);
     border-radius:10px;
     padding: 10px;    
-    align-items: center;
-    text-align: center;
+    align-items: center;    
     line-height: 400%;
     justify-content: center;
     margin: 0 auto;
@@ -41,26 +39,25 @@ body {
 }
 
 .plus-info {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background: rgb(46, 46, 46);
     color:white;
     padding: 10px;    
     font-size:20px;
     align-items: center;
-    text-align: center;
+
     border-radius:10px;
 }
 
 .payment-info {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background: rgb(46, 46, 46);
     color:white;
     padding: 10px;    
-    font-size:18px;
+    font-size:16px;
     align-items: center;
-    text-align: center;
     border-radius:10px;
 }
 
@@ -69,7 +66,7 @@ body {
 }
 
 .main-div {
-    width: 600px;
+    width: 500px;
     height: 500px;
     background: rgba(255, 255, 255, 0.9);
     border-radius:10px;
@@ -80,11 +77,11 @@ body {
 }
 
 .question-div {
-    width: 600px;
+    width: 500px;
     height: 80px;
     background:rgb(46, 46, 46);
-    line-height: 250%;    
-    font-size:30px;
+    line-height: 300%;    
+    font-size:25px;
     color:white;    
     border-radius: 10px;
 }
@@ -97,19 +94,19 @@ body {
 
 
 .yes-button, .no-button {
-    width: 250px;
-    height: 60px;
+    width: 150px;
+    height: 40px;
     color:white;
     border-radius: 10px;
-    line-height: 250%;    
-    font-size:25px;
+    line-height: 200%;    
+    font-size:20px;
     text-align: center;
 }
 
 .yes-button {
     background:green;   
     margin-top:30px;
-    margin-left:20px;
+    margin-left:80px;
 }
 
 .yes-button:hover {
@@ -120,7 +117,7 @@ body {
     background:rgb(255, 0, 0);
     left: 970px;    
     position:absolute;
-    top: 712px;
+    top: 711px;
 }
 
 .no-button:hover {
@@ -182,7 +179,6 @@ body {
         top: 618px;
     }
 }
-
 
 @media (min-width: 1001px) and (max-width: 1300px) {
     .main-container {
