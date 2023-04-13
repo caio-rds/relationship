@@ -128,6 +128,9 @@ function loop_swal(count){
 $(document).on('click', '.payment-info',function(){
     Swal.fire({
         title: 'VALOR DO PACOTE',
+        imageUrl: './media/money.jpg',
+        imageWidth: 300,
+        imageHeight: 200,
         text: 'Promoção enorme, principalmente se seu nome for ..., o pacote vitalício está saindo por apenas: 2 pizzas da domino\'s ou mais por mês, carinho'
     }).then((result) => {
         Swal.fire({
