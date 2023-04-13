@@ -1,3 +1,22 @@
+const bonus_pack = [
+    {
+        'exhibition': 'Total dedicação', 'url_background': '', 'explain': 'Total apoio e suporte pra todo momento que precisar. Sempre te colocando pra cima, única hora que vou te colocar pra baixo... deixa quieto'
+    },
+    {
+        'exhibition': 'Gracejos Ilimitados', 'url_background': './', 'explain': 'Nesse Pacote, o Repertório de piadas é infinito, até quando você não quiser, irá ter piadas.'        
+    },
+    {
+        'exhibition': 'Lealdade Ilimitada', 'url_background': './', 'explain': 'Confiança absoluta.'        
+    },
+    {
+        'exhibition': 'Um amigo', 'url_background': './', 'explain': 'Além de tudo, você ganhará um amigo.'        
+    },
+    {
+        'exhibition': 'Carinho e Atenção Ilimitados', 'url_background': './', 'explain': 'Auto Explicativo.'        
+    }
+]
+
+
 $(document).on('click','.yes-button',function(){    
     Swal.fire({
         title: 'Parabéns',
@@ -74,3 +93,46 @@ function MoveNB(){
     }
 
 }
+
+
+$(document).on('click', '.plus-info', function(){
+    loop_swal(0)
+});
+
+
+function loop_swal(count){
+    if (count >= bonus_pack.length) {        
+        return;
+    }
+
+    Swal.fire({
+        title: bonus_pack[count].exhibition,
+        text: bonus_pack[count].explain,
+        showDenyButton: true,
+        confirmButtonText: 'Continuar',
+        denyButtonText: 'Parar',
+        imageUrl: './media/yes.webp',
+        imageWidth: 300,
+        imageHeight: 200,
+        imageAlt: 'Deu ruim na Imagem kkk'   
+    }).then((result) => {
+        if (result.isConfirmed) {
+            loop_swal(count + 1)
+        } else {
+            return ''
+        }
+    })
+}
+
+
+$(document).on('click', '.payment-info',function(){
+    Swal.fire({
+        title: 'VALOR DO PACOTE',
+        text: 'Promoção enorme, principalmente se seu nome for ..., o pacote vitalício está saindo por apenas: 2 pizzas da domino\'s ou mais por mês, carinho'
+    }).then((result) => {
+        Swal.fire({
+            title: 'ACHOU INTERESSANTE ?',
+            text: 'CLIQUE NO SIM ALI NA IMAGEM, CASO NÃO QUERIA, VIADO NÃO É VERDE, VERDE É BAMBU, BOLA NA REDE E PAU NO SEU CÚ'
+        })
+    })
+});
